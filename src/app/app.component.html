@@ -1,19 +1,19 @@
 
-<nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top">
-  <div class="container">
+<nav class="navbar navbar-primary navbar-fixed-top">
+    <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <h1 class="navbar-brand"><a href="">
-        <!-- <img width="50" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="> -->
-        <img src="assets/images/scs.png">
-         Ayuda REC-WEB</a></h1>
+      <h1 class="navbar-brand">
+        <a href="">
+        <img style="with:48px;" src="assets/images/scs.png"> Ayuda REC-WEB</a>
+      </h1>
     </div>
 
     <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-primary my-2 my-sm-0 " type="submit">Buscar</button>
         <button class="btn btn-success mxy-2 my-sm-0 ml-2" (click)="showNuevo($event)">Agregar ayuda</button>
-      </form>
+    </form>
     <!-- <div class="navbar-right">
       <div class="navbar-form">
         <input type="search" class="form-control" placeholder="Buscar" id="search-highlight">
@@ -25,16 +25,23 @@
     </div> -->
     <!-- /.navbar-collapse -->
 
-  </div><!-- /.container-fluid -->
+  </div>
 </nav>
 
-<div class="sidenav">
-  <app-sidemenu></app-sidemenu>
-</div>
+<div>
 
-<div class="container">
-  <app-principal></app-principal>
-  <app-nuevo *ngIf="togleeNuevo"></app-nuevo>
+  <div class="sidenav">
+    <ul>
+      <li *ngFor="let item of sideMenu">
+        <app-sidemenu  [item]="item"></app-sidemenu>
+      <li>
+    </ul>
+  </div>
+  
+  <div class="container2">
+    <app-nuevo *ngIf="togleeNuevo"></app-nuevo>
+    <app-principal *ngFor="let item of sideMenu" [body]="item"></app-principal>
+  </div>
 </div>
 
 
