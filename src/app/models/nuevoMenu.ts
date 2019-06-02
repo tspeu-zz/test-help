@@ -17,7 +17,7 @@ export class ModeloMenu {
                 }];
             }]
         }];
-    bodyLista: [];
+    bodyLista: [{}];
     numberMenu: string;
     titleMenu: string;
     subtitleMenu:string;
