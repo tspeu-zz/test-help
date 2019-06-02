@@ -1,27 +1,36 @@
 # TestHelp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## introducción
 
-## Code scaffolding
+<h2 id="introducción"><a href="#Introduccion" class="headerlink" title="Introducción"></a>Introducción</h2>
+<p>El proyecto REC-SCS surge como un módulo independiente y único de prescripción para Atención Primaria y Especializada para medicación ambulatoria, donde el paciente se convierte en el centro del sistema sanitario, adecuarse a las normativas ministeriales vigentes;</p>
+<ul>
+<li><p>Ley 16/2003, de Cohesión y Calidad del SNS:</p>
+<ul>
+<li>Art.33. “Se tenderá a la dispensación individualizada de medicamentos y a la implantación de la receta electrónica…”</li>
+<li>Art.54. Red de comunicación del SNS; CIP, intercambio de información clínica y registros sanitarios, la receta electrónica y la gestión del fondo de cohesión sanitaria.</li>
+</ul>
+</li>
+<li><p>Ley 29/2006, de 29 de Julio, sobre Garantías y Uso Racional de los Medicamentos:</p>
+<ul>
+<li>TÍTULO VI “Del uso racional de los medicamentos de uso humano”: CAPÍTULO I “De las garantías de formación e información independiente y de calidad para la utilización adecuada de los medicamentos y productos sanitarios: Articulo 77. La receta médica y la prescripción hosiptalaria.</li>
+</ul>
+</li>
+</ul>
+ <img src="/assets/image/+Ültimas-modificaciones-150x90.png" width="150"> 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ <p>Recoge normativa sobre la receta médica, haciendo referencia a la receta médica electrónica. 1718/2010 del 17 de diciembre, sobre receta médica y órdenes de dispensación: Capítulo IV “la receta médica electrónica oficial de SNS”, contempla criterios generales de desarrollo. RD 16/2012 del 20 de abril, de medidas urgentes para garantizar la sostenibilidad del SNS y mejorar la calidad y seguridad de las prestaciones. Introduce modificaciones al RD 1718/2010 de receta médica y órdenes de dispensación. RD 1675/2012, por el cual se regulan las recetas oficiales y los requisitos especiales de prescripción y dispensación de estupefacientes para uso humano y veterinario. RD 1/2015 del 24 de julio, texto refundido de la Ley de garantías y uso racional del medicamento y productos sanitarios: Art.79. Contempla las recetas médicas y la prescripción hospitalaria. Art.80. Los sistemas de información para el apoyo a la prescripción. Normativa Autonómica Vigente: • Diciembre de 2007: Convenio Marco de Colaboración entre la Consejería de Sanidad y los Colegios Oficiales de Farmacéuticos de Canarias, para el desarrollo e implantación de la receta electrónica en la Comunidad Autónoma de Canarias. • Resolución de 26 de marzo de 2013, relativo a las medidas y acciones extraordinarias para la reducción del gasto.</p>
+<ul>
+<li>MEDIDAS ESPECÍFICAS EN MATERIA DE SANIDAD. RECETA ELECTRÓNICA CONTINUA CANARIA: “A efectos de racionalizar el gasto público respecto a la prescripción y dispensación de medicamentos en el ámbito de la Comunidad Autónoma de Canarias, se dará priorizará que la prescripción por parte de los facultativos del Servicio Canario de la Salud se realice través de la Receta Electrónica Continua Canaria (REC-SCS)”.</li>
+</ul>
+<h2 id="aspectos-legales"><a href="#Aspectos-legales" class="headerlink" title="Aspectos legales"></a>Aspectos legales</h2><h3 id="uso-de-certificados-electrónicos"><a href="#USO-DE-CERTIFICADOS-ELECTRONICOS" class="headerlink" title="USO DE CERTIFICADOS ELECTRÓNICOS"></a>USO DE CERTIFICADOS ELECTRÓNICOS</h3><p>Para la emisión de receta electrónica es requisito indispensable el uso de certificado electrónico reconocido, según el art. 8 del Real Decreto 1718/2010 de 17 de diciembre del año 2011. Con el objetivo de garantizar la seguridad en el uso y distribución de los mismos, el Servicio Canario de la Salud entrega a cada profesional lo que denominamos “token”. En nuestro caso, el token es un dispositivo criptográfico similar a un pendrive. Se usa para almacenar el certificado electrónico de manera segura. Cuenta con todas las garantías, tanto de seguridad como de firma legal manuscrita, proporcionando máxima seguridad al profesional. Este token debe ser solicitado a la Gerencia correspondiente generándose un nuevo certificado de la Fábrica de Moneda Nacional y Timbre o, si se posee uno, instalándolo en el token. El token debe estar insertado en el ordenador correspondiente antes de entrar en el módulo de REC-SCS para que posibilite la generación de planes de tratamiento. En caso de no estarlo no se podrá emitir planes de tratamiento. En la siguiente imagen se puede observar uno de los Tokens que se usan en la actualidad. <img src="/assets/images/Imagen-Token-300x211.jpg" alt=""></p>
+<h2 id="accesos-al-módulo-de-prescripción-de-rec-scs"><a href="#Accesos-al-modulo-de-prescripcion-de-REC-SCS" class="headerlink" title="Accesos al módulo de prescripción de REC-SCS"></a>Accesos al módulo de prescripción de REC-SCS</h2><h3 id="ac_ceso-al-módulo-de-prescripción-de-rec-scs-desde-atención-especializada_"><a href="#AC-CESO-AL-MODULO-DE-PRESCRIPCION-DE-REC-SCS-DESDE-ATENCION-ESPECIALIZADA" class="headerlink" title="AC_CESO AL MÓDULO DE PRESCRIPCIÓN DE REC-SCS DESDE ATENCIÓN ESPECIALIZADA_"></a>AC_CESO AL MÓDULO DE PRESCRIPCIÓN DE REC-SCS DESDE ATENCIÓN ESPECIALIZADA_</h3><p>  <strong>Drago AE:</strong> desde el componente “Captura actividad” donde tenemos la lista de pacientes citados, seleccionamos al paciente y abrimos su Historia con doble clic. <img src="/assets/images/Acceso-Drago-AE-1-300x129.png" alt=""> En caso que el paciente no tenga cita para ese día, lo incluimos en la lista como “Visita imprevista” o se puede seleccionar un acto clínico pre-existente del paciente para hacer la prescripción. <img src="/assets/images/Acceso-Drago-AE-2-300x104.png" alt=""> De entre los objetos clínicos que componen su Historia, hacemos clic sobre “Receta”. <img src="/assets/images/Acceso-Drago-AE-3-300x49.png" alt=""><img src="/assets/images/Acceso-Drago-AE-4-300x96.png" alt="">   <strong>SAP:</strong> la aplicación se abre, presentando una interfaz donde aparecen los medicamentos ordenados por grupo ATC, por defecto, seguido de los efectos y accesorios ordenado por orden alfabético (Plan terapéutico del paciente). Desde la Historia del paciente, en la segunda columna figura “Acceso a registros externos”. Haciendo clic en ese enlace aparece el menú de la segunda captura, desde el que se puede acceder a REC-SCS. <img src="/assets/images/Acceso-SAP-1-300x195.png" alt=""><img src="/assets/images/Acceso-SAP-2-300x129.png" alt="">  </p>
+<h3 id=""><a href="#" class="headerlink" title=""></a><img src="/assets/images/Captura-REC-WEB-al-completo.png" alt=""></h3><h3 id="acceso-al-módulo-de-prescripción-de-rec-scs-desde-atención-primaria"><a href="#ACCESO-AL-MODULO-DE-PRESCRIPCION-DE-REC-SCS-DESDE-ATENCION-PRIMARIA" class="headerlink" title="ACCESO AL MÓDULO DE PRESCRIPCIÓN DE REC-SCS DESDE ATENCIÓN PRIMARIA"></a><em>ACCESO AL MÓDULO DE PRESCRIPCIÓN DE REC-SCS DESDE ATENCIÓN PRIMARIA</em></h3><p>Desde Historia Clínica Electrónica de Atención Primaria, en la barra superior de iconos, se encuentra el icono a través del cual se accede a REC-SCS. <img src="/assets/images/Drago-AP.png" alt=""></p>
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+| introducción      | ORA   | 
+|------------|------------| 
+|  <img src="/assets/image/+Ültimas-modificaciones-150x90.png" width="150"> |  
+<img src="/assets/image/Imagen-Token-300x211.jpg" width="150"> |

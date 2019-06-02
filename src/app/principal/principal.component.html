@@ -1,9 +1,24 @@
 <h2>  {{body.titleBody}}</h2>
 <h3> {{body.subTitleBody}}</h3>
-<p>{{body.body}}</p>
+<!-- <p>{{body.body}}</p> -->
+<div *ngFor=" let b of body.body">
+  <!-- <p style="background: pink;">PARRAFO:</p>  -->
+      <p> {{b.parr}}</p>
+      <img *ngIf="b.hasImagen" style="text-align: center;" src="assets/{{b.imagen}}">
+      <!-- <p style="background: palevioletred;">LISTA:</p>  -->
+      <ul *ngFor=" let lista of b.listaParr">
+        <li> {{lista.titulo}}</li>
+        <!-- <p style="background: purple;">SUB LISTALISTA:</p>  -->
+          <ul *ngFor="let sub of lista.SubListaParr">
+            <li> {{sub.titulo}}</li>
+          </ul>
+      </ul>
+</div>
+
+
+
 <div >
-  <!--  *ngIf="'{{body.image}}'  !== 'no'"  -->
-  <img class="justify-content-center" src="assets/{{body.image}}">
+  <!--    !== 'no'"  -->
 </div>
 <!-- <img  src="assets/images/Imagen-Token-300x211.jpg"> -->
   <!--   *ngIf="{{body.image }}!=='no'"  g-->

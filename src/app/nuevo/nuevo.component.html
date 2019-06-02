@@ -6,8 +6,165 @@
 </angular-editor> -->
 
 
-<angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor>
-
+<!-- <angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor> -->
+<!-- 
 <button type="button" class="btn btn-success">Aceptar</button>
-<button type="button" class="btn btn-danger">Cancelar</button>
+<button type="button" class="btn btn-danger">Cancelar</button> -->
+
+<div class="row">
+    <div class="col-md-10 "> <!-- offset-md-1-->
+        <h3>Nuevo Texto ayuda</h3>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Número menu lateral</label>
+                        <input type="text" class="form-control" 
+                        formControlName="numMenuLat"
+                        [ngClass]="{ 'is-invalid': submitted && f.numMenuLat.errors }"/>
+
+                        <div *ngIf="submitted && f.numMenuLat.errors" class="invalid-feedback">
+                            <div *ngIf="f.numMenuLat.errors.required">Debe indicar el número del menu</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label>Título menu lateral</label>
+                        <input type="text" formControlName="titleMenu" class="form-control" 
+                        [ngClass]="{ 'is-invalid': submitted && f.titleMenu.errors }" />
+                        <div *ngIf="submitted && f.titleMenu.errors" class="invalid-feedback">
+                            <div *ngIf="f.titleMenu.errors.required">Debe indicar un título para el menu lateral</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TODO: SubTítulo menu lateral  -->
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Número Sub menu</label>
+                        <input type="text" formControlName="numberSubMenu" class="form-control" 
+                        [ngClass]="{ 'is-invalid': submitted && f.numberSubMenu.errors }" />
+                        <div *ngIf="submitted && f.numberSubMenu.errors" class="invalid-feedback">
+                            <div *ngIf="f.numberSubMenu.errors.required">Debe indicar un número sub menu</div>
+                        </div>
+
+                        <input type="checkbox" formControlName="addSubtitle"
+                        (change)="onAddSubtitle($event)"
+                        [checked]='isSelected()' 
+                        [value]='role.id'>
+                        Agregar subtítulo
+
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label>SubTítulo menu lateral</label>
+                        <input type="text" formControlName="subtitleMenu" class="form-control" 
+                        [ngClass]="{ 'is-invalid': submitted && f.subtitleMenu.errors }" />
+                        <div *ngIf="submitted && f.subtitleMenu.errors" class="invalid-feedback">
+                            <div *ngIf="f.subtitleMenu.errors.required">Indique un título del sub menu</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TODO: BODY  -->
+            <div class="form-group">
+                <label>Título </label>
+                <input type="text" formControlName="titleBody" class="form-control" 
+                [ngClass]="{ 'is-invalid': submitted && f.titleBody.errors }" />
+                <div *ngIf="submitted && f.titleBody.errors" class="invalid-feedback">
+                    <div *ngIf="f.titleBody.errors.required">Indique un título</div>
+                </div>
+            </div>
+            <!-- TODO: BODY SUBTITULO  -->
+            <div class="form-group">
+                <label>Sub Título </label>
+                <input type="text" formControlName="subTitleBody" class="form-control" 
+                [ngClass]="{ 'is-invalid': submitted && f.subTitleBody.errors }" />
+                <div *ngIf="submitted && f.subTitleBody.errors" class="invalid-feedback">
+                    <div *ngIf="f.subTitleBody.errors.required">Indique un Sub título</div>
+                </div>
+            </div>
+            
+            <!-- TODO: BODY PARRAFO  -->
+            <div class="form-group">
+                <label>Texto</label>
+                <textarea name="message" formControlName="parrafoBody" class="form-control"
+                rows="5" cols="200" [ngClass]="{ 'is-invalid': submitted && f.parrafoBody.errors }">
+                </textarea>
+                <!-- <div *ngIf="submitted && f.parrafoBody.errors" class="invalid-feedback">
+                    <div *ngIf="f.parrafoBody.errors.required">First Name is required</div>
+                </div> -->
+                <div class="form-group">
+                    <input type="checkbox" formControlName="addSubtitle"
+                    (change)="onAddSubtitle($event)"
+                    [checked]='isSelected()' 
+                    [value]='role.id'>Agregar parrafo
+                </div>
+            </div>
+            <!-- IMAGEN PARRAFO -->
+            <div class="form-group">
+                <label>Imagen texto</label>
+                <input type="text" formControlName="firstName" class="form-control" 
+                [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                </div>
+            </div>
+            
+
+            <div class="row">
+                <div class="col-md-8"></div>
+            </div>
+            
+            
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" formControlName="firstName" class="form-control" 
+                [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                    <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                    <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
 

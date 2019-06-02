@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule , FormControlName , ReactiveFormsModule } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators, FormsModule , FormControlName , ReactiveFormsModule } from "@angular/forms";
+
 
 // editor
 // import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+//validator
+import { MustMatch } from './musmatch';
+// MODELO
+import { ModeloMenu } from '../models/nuevoMenu';
 
 @Component({
   selector: 'app-nuevo',
@@ -15,13 +20,70 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 export class NuevoComponent implements OnInit {
 
+  registerForm: FormGroup;
+  submitted = false;
+  //modelo
 
-
-  constructor( ) { }
-
-  ngOnInit() {
+  itemNuevo : ModeloMenu = null;
+  checkManager = {
+    checks: [
+      { name: 'addMenuSubtitulo',  selected: false, id: 2 },
+      { name: 'bodyTitulo',  selected: false, id: 3 },
+      { name: 'addParrafoBody',  selected: false, id: 4 },
+      { name: 'addParrafoBody',  selected: false, id: 4 },
+    ]
   }
 
+  constructor(private formBuilder: FormBuilder ) { }
+
+  ngOnInit() {
+    this.registerForm = this.formBuilder.group({
+      numMenuLat: ['', Validators.required],
+      titleMenu: ['', Validators.required],
+      numberSubMenu: ['', Validators.required],
+      subtitleMenu: ['', Validators.required],
+      addSubtitle: [''],
+      titleBody: ['', Validators.required],
+      subTitleBody: ['', Validators.required],
+      parrafoBody: ['', Validators.required],
+      imagenParrafo:[''],
+      hasImagenParrafo:[false],
+
+
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', Validators.required]
+    }, 
+    {
+        validator: MustMatch('password', 'confirmPassword')
+    });
+  }
+
+  // convenience getter for easy access to form fields
+  get f() { return this.registerForm.controls; }
+
+  onSubmit() {
+  
+      this.submitted = true;
+
+      // stop here if form is invalid
+      if (this.registerForm.invalid) {
+          return;
+      }
+
+      alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
+      console.log('this.registerForm.value--->', this.registerForm.value);
+  }
+
+  isSelected() {
+
+  }
+
+  onAddSubtitle() {
+
+  }
 // tslint:disable-next-line: member-ordering
   config: AngularEditorConfig = {
     editable: true,

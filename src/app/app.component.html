@@ -1,11 +1,11 @@
 
 <nav class="navbar navbar-primary navbar-fixed-top">
-    <div class="container">
+    <!-- <div class="container"> -->
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+    <div class="navbar-header"  style="margin-left: 20px;">
       <h1 class="navbar-brand">
         <a href="">
-        <img style="with:48px;" src="assets/images/scs.png"> Ayuda REC-WEB</a>
+        <img style="width:48px;" src="assets/images/scs.png"> Ayuda REC-WEB</a>
       </h1>
     </div>
 
@@ -13,6 +13,8 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-primary my-2 my-sm-0 " type="submit">Buscar</button>
         <button class="btn btn-success mxy-2 my-sm-0 ml-2" (click)="showNuevo($event)">Agregar ayuda</button>
+        <button class="btn btn-warning mxy-2 my-sm-0 ml-2" (click)="showNuevo2($event)">ayuda FROALA</button>
+        <button class="btn btn-secondary mxy-2 my-sm-0 ml-2" (click)="showNuevo3($event)">ayuda Quill</button>
     </form>
     <!-- <div class="navbar-right">
       <div class="navbar-form">
@@ -25,7 +27,7 @@
     </div> -->
     <!-- /.navbar-collapse -->
 
-  </div>
+  <!-- </div> -->
 </nav>
 
 <div>
@@ -37,9 +39,14 @@
       <li>
     </ul>
   </div>
-  
+
   <div class="container2">
     <app-nuevo *ngIf="togleeNuevo"></app-nuevo>
+    <div *ngIf="togleeNuevoFroala" [froalaEditor]>Hello, Froala!</div>
+    <quill-editor *ngIf="togleeNuevoQuill"></quill-editor>
+
+
+
     <app-principal *ngFor="let item of sideMenu" [body]="item"></app-principal>
   </div>
 </div>
