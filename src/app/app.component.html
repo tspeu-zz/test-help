@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-primary navbar-fixed-top">
+<nav class="navbar navbar-primary navbar-fixed-top sticky-top">
     <!-- <div class="container"> -->
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header"  style="margin-left: 20px;">
@@ -13,8 +13,8 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-primary my-2 my-sm-0 " type="submit">Buscar</button>
         <button class="btn btn-success mxy-2 my-sm-0 ml-2" (click)="showNuevo($event)">Agregar ayuda</button>
-        <button class="btn btn-warning mxy-2 my-sm-0 ml-2" (click)="showNuevo2($event)">ayuda FROALA</button>
-        <button class="btn btn-secondary mxy-2 my-sm-0 ml-2" (click)="showNuevo3($event)">ayuda Quill</button>
+        <!-- <button class="btn btn-warning mxy-2 my-sm-0 ml-2" (click)="showNuevo2($event)">ayuda FROALA</button>
+        <button class="btn btn-secondary mxy-2 my-sm-0 ml-2" (click)="showNuevo3($event)">ayuda Quill</button> -->
     </form>
     <!-- <div class="navbar-right">
       <div class="navbar-form">
@@ -32,7 +32,7 @@
 
 <div>
 
-  <div class="sidenav">
+  <div class="sidenav my-2">
     <ul>
       <li *ngFor="let item of sideMenu">
         <app-sidemenu  [item]="item"></app-sidemenu>
@@ -40,16 +40,18 @@
     </ul>
   </div>
 
-  <div class="container">
+  <div class="container my-2">
+    <h1 class="text-center font-weight-bold"> Ayuda a la prescripción de REC-SCS</h1>
     <app-nuevo *ngIf="togleeNuevo"></app-nuevo>
-    <div *ngIf="togleeNuevoFroala" [froalaEditor]>Hello, Froala!</div>
-    <quill-editor *ngIf="togleeNuevoQuill"></quill-editor>
-
-    <app-principal *ngFor="let item of sideMenu" [body]="item"></app-principal>
+    <div [hidden]="togleeNuevo">
+      <app-principal *ngFor="let item of sideMenu" [body]="item"></app-principal>
+    </div>
 
   </div>
 </div>
 
+<!-- <div *ngIf="togleeNuevoFroala" [froalaEditor]>Hello, Froala!</div>
+<quill-editor *ngIf="togleeNuevoQuill"></quill-editor> -->
 
 
 

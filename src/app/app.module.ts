@@ -26,13 +26,15 @@ import { AppComponent } from './app.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { NuevoComponent } from './nuevo/nuevo.component';
+import { UploadImageComponent } from './upload-image/upload-image.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidemenuComponent,
     PrincipalComponent,
-    NuevoComponent
+    NuevoComponent,
+    UploadImageComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,

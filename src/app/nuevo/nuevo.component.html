@@ -1,5 +1,5 @@
-
-<!-- <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor> -->
+<!--
+<ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor> -->
 
 <!-- <angular-editor [placeholder]="'Enter text here...'"
 [(ngModel)]="htmlContent">
@@ -72,7 +72,7 @@
             </div>
           </div>
 
-            <!-- TODO: BODY  -->
+          <!-- TODO: BODY TITULO TEXTO PRINCIPAL  -->
           <div class="card my-2 pxy-2">
           <div class="card-body">
             <h5 class="card-title text-center text-primary">Texto Principal</h5>
@@ -84,7 +84,7 @@
                     <div *ngIf="f.titleBody.errors.required">Indique un título</div>
                 </div>
             </div>
-            <!-- TODO: BODY SUBTITULO  -->
+            <!-- TODO: BODY SUBTITULO TEXTO PRINCIPAL -->
             <div class="form-group">
                 <label class="font-weight-light">Sub Título Principal</label>
                 <input type="text" formControlName="subTitleBody" class="form-control"
@@ -94,14 +94,14 @@
                 </div>
             </div>
             <div class="form-group">
-                <input type="checkbox" formControlName="addSubtitle"
+                <input type="checkbox" formControlName="addSubtitlePrincipal"
                 (change)="onAddImagenSubtitulo($event)"
                 [checked]='togleeImagenSubtituloPrin'>  añadir imagen Título<!-- [value]='role.id'-->
             </div>
-            <!-- IMAGEN PARRAFO -->
+            <!-- FIXME: IMAGEN TEXTO PRINCIPAL -->
             <div class="form-group" *ngIf="togleeImagenSubtituloPrin">
                 <label>Imagen Título</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                <input type="file" class="form-control-file" id="imagenTextoPrincipal">
             </div>
           </div>   <!--  <div class="card-body">-->
           </div>  <!--  <div class="card">-->
@@ -112,13 +112,16 @@
               <h5 class="card-title text-center text-primary">Párrafo Texto Principal</h5>
             <div class="form-group">
                 <label class="col-form-label col-form-label-lg">Texto Párrafo</label>
+
                 <textarea name="message" formControlName="parrafoBody" class="form-control"
                 rows="5" cols="200" [ngClass]="{ 'is-invalid': submitted && f.parrafoBody.errors }">
                 </textarea>
 
+                <!-- <angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor> -->
+
                 <div class="row">
                   <div class="form-group mx-3">
-                    <input type="checkbox" formControlName="addSubtitle"
+                    <input type="checkbox" formControlName="addImagenParrafo"
                     (change)="onAddImagenParrafo($event)"
                     [checked]='togleeImagenParrafo'>  añadir imagen  párrafo<!-- [value]='role.id'-->
                   </div>
@@ -130,10 +133,10 @@
                   </div>
                 </div>
 
-                <!-- IMAGEN PARRAFO -->
+                <!--FIXME: IMAGEN PARRAFO -->
                 <div class="form-group" *ngIf="togleeImagenParrafo">
                   <label>Imagen Parrafo</label>
-                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                  <input type="file" class="form-control-file" id="imagenParrafo">
                 </div>
 
                 <!-- TODO: LISTA PARRAFO -->
@@ -163,10 +166,10 @@
                       </div>
                     </div>
 
-                     <!-- IMAGEN LISTA PARRAFO -->
+                  <!-- FIXME: IMAGEN LISTA PARRAFO -->
                   <div class="form-group" *ngIf="togleeImagenListaParrafo">
                     <label>Imagen Lista Párrafo</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <input type="file" class="form-control-file" id="imagenListaParrafo">
                   </div>
 
                     <button class="btn btn-info my-2">
@@ -195,10 +198,10 @@
                             </div>
                         </div>
 
-                           <!-- IMAGEN SUB LISTA PARRAFO -->
+                        <!-- FIXME: IMAGEN SUB LISTA PARRAFO -->
                         <div class="form-group" *ngIf="togleeImagenSubListaParrafo">
                             <label>Imagen Sub Lista Párrafo</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            <input type="file" class="form-control-file" id="imagenSubListaParrafo">
                         </div>
 
                         <button class="btn btn-secondary my-2">

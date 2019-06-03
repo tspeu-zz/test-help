@@ -52,25 +52,29 @@ export class NuevoComponent implements OnInit {
       titleMenu: ['', Validators.required],
       numberSubMenu: ['', Validators.required],
       subtitleMenu: ['', Validators.required],
-      addSubtitle: [''],
       titleBody: ['', Validators.required],
       subTitleBody: ['', Validators.required],
+      addSubtitlePrincipal: [''],
       parrafoBody: ['', Validators.required],
-      imagenParrafo:[''],
-      hasImagenParrafo:[false],
+      addImagenParrafo: [''],
+      imagenParrafo: [''],
+      addSubtitleParrafo : [''],
+      hasImagenParrafo: [false]
 
 
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required]
-    },
-    {
-        validator: MustMatch('password', 'confirmPassword')
-    });
+
+    }
+    // ,
+    // {
+    //     validator: MustMatch('password', 'confirmPassword')
+    // }
+    );
   }
-
+//  firstName: ['', Validators.required],
+// lastName: ['', Validators.required],
+// email: ['', [Validators.required, Validators.email]],
+// password: ['', [Validators.required, Validators.minLength(6)]],
+// confirmPassword: ['', Validators.required]
   // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
 
@@ -79,11 +83,11 @@ export class NuevoComponent implements OnInit {
       this.submitted = true;
 
       // stop here if form is invalid
-      if (this.registerForm.invalid) {
-          return;
-      }
+      // if (this.registerForm.invalid) {
+      //     return;
+      // }
 
-      alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
+      // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
       console.log('this.registerForm.value--->', this.registerForm.value);
   }
 

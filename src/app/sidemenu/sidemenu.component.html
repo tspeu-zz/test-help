@@ -1,4 +1,30 @@
 
-<h2>{{item.numberMenu}}.  {{item.titleMenu | uppercase  }} </h2>
-<p *ngIf="item.hasSubMenu"> {{item.numberSubMenu}}.  {{item.subtitleMenu | uppercase }} </p>
+
+  <h2>
+    <a href="#{{item.numberMenu}}">
+      {{item.numberMenu}}.  {{item.titleMenu | uppercase  }}
+    </a>
+  </h2>
+  <p *ngIf="item.hasSubMenu">
+    <a href="#{{item.numberSubMenu}}">
+     {{item.numberSubMenu}}.  {{item.subtitleMenu | uppercase }}
+    </a>
+  </p>
+
+  <!-- TODO:
+OJO LUEGO
+<a (click)="onClick()">From Here</a>
+<div id='foobar'>To Here</div>
+
+With this in my .ts:
+
+onClick(){
+    let x = document.querySelector("#foobar");
+    if (x){
+        x.scrollIntoView();
+    }
+}
+https://stackoverflow.com/questions/36101756/angular2-routing-with-hashtag-to-page-anchor
+
+   -->
 

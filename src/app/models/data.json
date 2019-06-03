@@ -50,6 +50,7 @@
   ],"hasBodyLista": false
 },
 {
+  "_id": "5cf12abf0e79183e8c8c57c6",
 "body": [
   {
       "parr": "Para la emisión de receta electrónica es requisito indispensable el uso de certificado electrónico reconocido, según el art. 8 del Real Decreto 1718/2010 de 17 de diciembre del año 2011. Con el objetivo de garantizar la seguridad en el uso y distribución de los mismos, el Servicio Canario de la Salud entrega a cada profesional lo que denominamos “token”. En nuestro caso, el token es un dispositivo criptográfico similar a un pendrive. Se usa para almacenar el certificado electrónico de manera segura. Cuenta con todas las garantías, tanto de seguridad como de firma legal manuscrita, proporcionando máxima seguridad al profesional. Este token debe ser solicitado a la Gerencia correspondiente generándose un nuevo certificado de la Fábrica de Moneda Nacional y Timbre o, si se posee uno, instalándolo en el token. El token debe estar insertado en el ordenador correspondiente antes de entrar en el módulo de REC-SCS para que posibilite la generación de planes de tratamiento. En caso de no estarlo no se podrá emitir planes de tratamiento. En la siguiente imagen se puede observar uno de los Tokens que se usan en la actualidad.",
@@ -58,7 +59,6 @@
   }
 ],
 "bodyLista": [],
-"_id": "5cf12abf0e79183e8c8c57c6",
 "numberMenu": "2",
 "titleMenu": "Aspectos legales",
 "subtitleMenu": "USO DE CERTIFICADOS ELECTRÓNICOS",
@@ -73,7 +73,8 @@
   "hasImagen": true,
   "imagen": "images/Imagen-Token-300x211.jpg"
 },
-"isEdit": false,
+"isEdit": false
+,
 "createdAt": "2019-05-31T13:23:11.744Z",
 "updatedAt": "2019-05-31T13:23:11.744Z",
 "__v": 0

@@ -1,0 +1,8 @@
+
+<input  style="display : none;"
+  type="file"  (change)="onFileSelect($event)" #fileInput>
+
+<button type="button" (click)="fileInput.click()"> PICK A FILE </button>
+
+<!--usar un evento para subir  -->
+<button type="button" (click)="onUpload()">SUBIR </button>
