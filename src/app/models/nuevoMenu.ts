@@ -10,11 +10,11 @@ export class ModeloMenu {
                 titulo: string;
                 imagen: string;
                 hasImagen: false;
-                SubListaParr:[{
-                    titulo:  string;
-                    imagen:  string;
-                    hasImagen: false;
-                }];
+                    SubListaParr:[{
+                        titulo:  string;
+                        imagen:  string;
+                        hasImagen: false;
+                    }];
             }]
         }];
     bodyLista: [{}];
@@ -28,7 +28,10 @@ export class ModeloMenu {
     hasBodyLista: false
     imagenLista:string;
     image:string;
-    imageSubtitle: string;
+    imageSubtitle: {
+        hasImagen:false,
+        imagen : string
+    };
     isEdit: false;
 
 }

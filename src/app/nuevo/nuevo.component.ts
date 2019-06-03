@@ -52,7 +52,7 @@ export class NuevoComponent implements OnInit {
       titleMenu: ['', Validators.required],
       numberSubMenu: ['', Validators.required],
       subtitleMenu: ['', Validators.required],
-      addSubtitleMenu: [],
+      addSubtitleMenu: [false],
 
       titleBody: ['', Validators.required],
       subTitleBody: ['', Validators.required],
@@ -69,30 +69,51 @@ export class NuevoComponent implements OnInit {
       addParrafo: [],
       hasImagenParrafo: [false],
 
-
-
-    // hasSubMenu:boolean;
-    // titleBody: string;
-    // subTitleBody: string;
-    // // body: []; en mongo FIXME:
-    // body: string;
-    // bodyLista?: string;
-    // // bodyLista: [] en momgo
-    // hasBodyLista?: boolean;
-    // imagenLista?: string;
-    // image?: string;
-    // imageSubtitle?: string;
-    // isEdit: boolean;
-
-
-
     }
-    // ,
-    // {
-    //     validator: MustMatch('password', 'confirmPassword')
-    // }
+    // ,{validator: MustMatch('password', 'confirmPassword')}
     );
   }
+
+  tranformToDb( data) {
+    let formatData = new ModeloMenu;
+  
+    if ( data !== null) {
+
+      formatData.numberMenu= data.numMenuLat;
+      formatData.titleMenu = data.titleMenu;
+      formatData.subtitleMenu = data.subtitleMenu;
+      formatData.numberSubMenu = data.numberSubMenu;
+
+      formatData.hasSubMenu = data.addSubtitleMenu;
+
+      formatData.titleBody = data.titleBody;
+      formatData.subTitleBody = data.subTitleBody;
+      formatData.hasBodyLista = data.false
+      formatData.imagenLista = data.addSubtitleMenu;
+      formatData.image = data.imagenTextoPrincipal;
+
+      // formatData.body = [ ];
+      formatData.body[0].parr = data.parrafoBody;
+      formatData.body[0].imagen = data.imagenParrafo;
+      formatData.body[0].hasImagen = false;
+      formatData.body[0].listaParr[0].titulo = data.titleListaParrafo;
+      formatData.body[0].listaParr[0].imagen = data.imagenListaParrafo;
+      formatData.body[0].listaParr[0].hasImagen = false;
+      formatData.body[0].listaParr[0].SubListaParr[0].titulo = ""
+      formatData.body[0].listaParr[0].SubListaParr[0].imagen = "";
+      formatData.body[0].listaParr[0].SubListaParr[0].hasImagen= false;
+      formatData.body.push();
+
+      formatData.bodyLista[0] = [];
+      formatData.imageSubtitle.imagen = "";
+      formatData.imageSubtitle.hasImagen = false;
+      formatData.isEdit=false
+    }
+    console.log('DATA FORMATEADA_> ',formatData );
+    return formatData;
+  }
+
+
 //  firstName: ['', Validators.required],
 // lastName: ['', Validators.required],
 // email: ['', [Validators.required, Validators.email]],
@@ -104,6 +125,8 @@ export class NuevoComponent implements OnInit {
   onSubmit() {
 
       this.submitted = true;
+      let  resp : ModeloMenu;
+      resp =  this.tranformToDb(this.registerForm.value);
 
       // stop here if form is invalid
       // if (this.registerForm.invalid) {
@@ -112,6 +135,7 @@ export class NuevoComponent implements OnInit {
 
       // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
       console.log('this.registerForm.value--->', this.registerForm.value);
+      console.log('RESP TRNAFORMSFO--->', resp);
   }
 
   /**

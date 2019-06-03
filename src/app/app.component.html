@@ -32,7 +32,7 @@
 
 <div>
 
-  <div class="sidenav my-2">
+  <div class="sidenav ">
     <ul>
       <li *ngFor="let item of sideMenu">
         <app-sidemenu  [item]="item"></app-sidemenu>
@@ -40,7 +40,7 @@
     </ul>
   </div>
 
-  <div class="container my-2">
+  <div class="container2 ">
     <h1 class="text-center font-weight-bold"> Ayuda a la prescripción de REC-SCS</h1>
     <app-nuevo *ngIf="togleeNuevo"></app-nuevo>
     <div [hidden]="togleeNuevo">
