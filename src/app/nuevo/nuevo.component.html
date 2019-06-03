@@ -17,6 +17,7 @@
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
           <div class="card pxy-2">
           <div class="card-body">
+              <h5 class="card-title text-center text-primary">Texto Menu Lateral</h5>
             <div class="row">
                 <div class="col-md-2">
                     <div class="form-group">
@@ -32,7 +33,7 @@
                 </div>
                 <div class="col-md-10">
                     <div class="form-group">
-                        <label>Título menu lateral</label>
+                        <label class="font-weight-bold">Título menu lateral</label>
                         <input type="text" formControlName="titleMenu" class="form-control"
                         [ngClass]="{ 'is-invalid': submitted && f.titleMenu.errors }" />
                         <div *ngIf="submitted && f.titleMenu.errors" class="invalid-feedback">
@@ -59,7 +60,7 @@
                 </div>
                 <div class="col-md-10">
                     <div class="form-group">
-                        <label>SubTítulo menu lateral</label>
+                        <label class="font-weight-bold">SubTítulo menu lateral</label>
                         <input type="text" formControlName="subtitleMenu" class="form-control"
                         [ngClass]="{ 'is-invalid': submitted && f.subtitleMenu.errors }" />
                         <div *ngIf="submitted && f.subtitleMenu.errors" class="invalid-feedback">
@@ -74,8 +75,9 @@
             <!-- TODO: BODY  -->
           <div class="card my-2 pxy-2">
           <div class="card-body">
+            <h5 class="card-title text-center text-primary">Texto Principal</h5>
             <div class="form-group">
-                <label>Título Principal </label>
+                <label class="col-form-label col-form-label-lg">Título Principal</label>
                 <input type="text" formControlName="titleBody" class="form-control"
                 [ngClass]="{ 'is-invalid': submitted && f.titleBody.errors }" />
                 <div *ngIf="submitted && f.titleBody.errors" class="invalid-feedback">
@@ -84,7 +86,7 @@
             </div>
             <!-- TODO: BODY SUBTITULO  -->
             <div class="form-group">
-                <label>Sub Título Principal</label>
+                <label class="font-weight-light">Sub Título Principal</label>
                 <input type="text" formControlName="subTitleBody" class="form-control"
                 [ngClass]="{ 'is-invalid': submitted && f.subTitleBody.errors }" />
                 <div *ngIf="submitted && f.subTitleBody.errors" class="invalid-feedback">
@@ -107,8 +109,9 @@
           <!-- TODO: BODY PARRAFO  -->
           <div class="card my-2 pxy-2">
           <div class="card-body">
+              <h5 class="card-title text-center text-primary">Párrafo Texto Principal</h5>
             <div class="form-group">
-                <label>Texto Párrafo</label>
+                <label class="col-form-label col-form-label-lg">Texto Párrafo</label>
                 <textarea name="message" formControlName="parrafoBody" class="form-control"
                 rows="5" cols="200" [ngClass]="{ 'is-invalid': submitted && f.parrafoBody.errors }">
                 </textarea>
@@ -136,7 +139,7 @@
                 <!-- TODO: LISTA PARRAFO -->
                 <div class="card my-2 pxy-2" *ngIf="addTieneListaTituloParrafo">
                   <div class="card-body">
-
+                    <h5 class="card-title text-center text-primary">Lista Párrafo Texto Principal</h5>
                     <div class="form-group">
                       <label>Título lista párrafo</label>
                       <input type="text" formControlName="subTitleBody" class="form-control"
@@ -173,7 +176,8 @@
 
                     <!-- TODO: SUB LISTA PARRAFO -->
                     <div class="card my-2 pxy-2" *ngIf="addTieneSubListaTituloParrafo">
-                    <div class="card-body">
+                      <div class="card-body">
+                      <h5 class="card-title text-center text-primary">Sub Lista Párrafo Texto Principal</h5>
                         <div class="form-group">
                             <label>Título sub lista párrafo</label>
                             <input type="text" formControlName="subTitleBody" class="form-control"
