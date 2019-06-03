@@ -1,3 +1,9 @@
 
+.listas-principal ul {
+  list-style-type: disc;
+}
+.listas-secundaria ul {
+  list-style-type: circle;
+}
 
 

@@ -37,10 +37,10 @@
   /* background-color: grey;  */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
-  
+
 }
 
-li {
+.sidenav li {
   list-style-type: none;
 }
 .sidenav h2{
@@ -54,8 +54,8 @@ li {
   /* padding: 16px 8px 6px 16px;  */
   font-size: 12px;
   margin-left: 15px;
-  
-  
+
+
 }
 /* The navigation menu links */
 .sidenav a {
@@ -74,7 +74,7 @@ li {
 /* Style page content */
 /* .main {
   margin-left: 160px; /* Same as the width of the sidebar */
-  /* padding: 0px 10px; 
+  /* padding: 0px 10px;
 }*/
 
 
@@ -89,7 +89,7 @@ li {
 .container2{
   margin-left: 270px !important;
   /* background-color: pink;  */
-  width: 100%; 
+  width: 100%;
   padding-right: 15px;
   /* padding-left: 155px; */
   margin-right: 150px;
@@ -97,6 +97,24 @@ li {
 
 
 }
+
+.grupo {
+  border-color: #c8dae4;
+  border-style: solid;
+  border-width: 1px;
+  padding-bottom: 0.625em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border-radius: 25px;
+
+
+}
+/* .listas-principal  {
+  list-style-type: disc;
+}
+.listas-secundaria  {
+  list-style-type: circle;
+} */
 
 
 /*

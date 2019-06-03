@@ -1,16 +1,4 @@
-<!-- <p>
-  sidemenu works!
-</p>
 
-<a href="#">INTRODUCCIÓN</a>
-<a href="#">ASPECTOS LEGALES</a>
-<a href="#">ACCESOS AL MÓDULO DE PRESCRIPCIÓN DE REC-SCS</a>
-<a href="#">PLAN DE TRATAMIENTO ÚNICO (PTU) POR PACIENTE</a> -->
-<h2>{{item.numberMenu}}.  {{item.titleMenu}} </h2>
-<p *ngIf="item.hasSubMenu"> {{item.numberSubMenu}}.  {{item.subtitleMenu}} </p>
+<h2>{{item.numberMenu}}.  {{item.titleMenu | uppercase  }} </h2>
+<p *ngIf="item.hasSubMenu"> {{item.numberSubMenu}}.  {{item.subtitleMenu | uppercase }} </p>
 
-<!-- <div class="container2">
-    <app-principal [body]="item"></app-principal>
-    <<app-nuevo *ngIf="togleeNuevo"></app-nuevo> 
- 
-</div> -->

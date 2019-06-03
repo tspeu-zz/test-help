@@ -6,10 +6,10 @@
       <p> {{b.parr}}</p>
       <img *ngIf="b.hasImagen" style="text-align: center;" src="assets/{{b.imagen}}">
       <!-- <p style="background: palevioletred;">LISTA:</p>  -->
-      <ul *ngFor=" let lista of b.listaParr">
+      <ul *ngFor=" let lista of b.listaParr" class="listas-principal ">
         <li> {{lista.titulo}}</li>
         <!-- <p style="background: purple;">SUB LISTALISTA:</p>  -->
-          <ul *ngFor="let sub of lista.SubListaParr">
+          <ul *ngFor="let sub of lista.SubListaParr" style="list-style-type: circle;">
             <li> {{sub.titulo}}</li>
           </ul>
       </ul>

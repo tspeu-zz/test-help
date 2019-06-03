@@ -40,14 +40,13 @@
     </ul>
   </div>
 
-  <div class="container2">
+  <div class="container">
     <app-nuevo *ngIf="togleeNuevo"></app-nuevo>
     <div *ngIf="togleeNuevoFroala" [froalaEditor]>Hello, Froala!</div>
     <quill-editor *ngIf="togleeNuevoQuill"></quill-editor>
 
-
-
     <app-principal *ngFor="let item of sideMenu" [body]="item"></app-principal>
+
   </div>
 </div>
 

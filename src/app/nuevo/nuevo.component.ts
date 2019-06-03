@@ -24,7 +24,8 @@ export class NuevoComponent implements OnInit {
   submitted = false;
   //modelo
 
-  itemNuevo : ModeloMenu = null;
+  itemNuevo: ModeloMenu = null;
+
   checkManager = {
     checks: [
       { name: 'addMenuSubtitulo',  selected: false, id: 2 },
@@ -32,7 +33,16 @@ export class NuevoComponent implements OnInit {
       { name: 'addParrafoBody',  selected: false, id: 4 },
       { name: 'addParrafoBody',  selected: false, id: 4 },
     ]
-  }
+  };
+  // check imagenes
+  togleeImagenSubtituloPrin = false;
+  togleeImagenParrafo = false;
+  togleeImagenListaParrafo = false;
+  togleeImagenSubListaParrafo = false;
+
+  // check add
+  addTieneListaTituloParrafo = false;
+  addTieneSubListaTituloParrafo = false;
 
   constructor(private formBuilder: FormBuilder ) { }
 
@@ -55,7 +65,7 @@ export class NuevoComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required]
-    }, 
+    },
     {
         validator: MustMatch('password', 'confirmPassword')
     });
@@ -65,7 +75,7 @@ export class NuevoComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
-  
+
       this.submitted = true;
 
       // stop here if form is invalid
@@ -76,6 +86,40 @@ export class NuevoComponent implements OnInit {
       alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
       console.log('this.registerForm.value--->', this.registerForm.value);
   }
+
+  /**
+  *ADD IMAGENES->
+  */
+ onAddImagenSubtitulo($event) {
+    this.togleeImagenSubtituloPrin = !this.togleeImagenSubtituloPrin;
+  }
+
+ onAddImagenParrafo($event) {
+    this.togleeImagenParrafo = !this.togleeImagenParrafo;
+  }
+ onAddImagenSubtituloParrafo($event) {
+    this.togleeImagenListaParrafo = !this.togleeImagenListaParrafo;
+  }
+
+ onAddImagenSubListaParrafo($event) {
+    this.togleeImagenSubListaParrafo = !this.togleeImagenSubListaParrafo;
+  }
+
+
+  /**
+   * add lista parrafo
+   */
+    onAddListaParrafo($event) {
+        this.addTieneListaTituloParrafo = !this.addTieneListaTituloParrafo;
+    }
+
+  /**
+   * add sub lista parrafo
+   */
+    onAddSubListaParrafo($event) {
+        this.addTieneSubListaTituloParrafo = !this.addTieneSubListaTituloParrafo;
+    }
+
 
   isSelected() {
 

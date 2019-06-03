@@ -39,7 +39,6 @@ constructor(private menuService: MenuService) {}
     //TODO:
     this.menuService.getAllMenu()
       .subscribe( (res) => {
-      
           this.sideMenu = res;
           console.log('sideMENU:', this.sideMenu);
         } , error =>{
@@ -57,7 +56,7 @@ constructor(private menuService: MenuService) {}
     return classes;
   }
 }
-/* 
+/*
 { id: 1, numberMenu : '1',titleMenu: 'Introducción',
         titleBody: 'Ayuda a la prescripción de REC-SCS',
         subTitleBody: 'Introducción',
