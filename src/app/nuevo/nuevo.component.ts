@@ -52,14 +52,37 @@ export class NuevoComponent implements OnInit {
       titleMenu: ['', Validators.required],
       numberSubMenu: ['', Validators.required],
       subtitleMenu: ['', Validators.required],
+      addSubtitleMenu: [],
+
       titleBody: ['', Validators.required],
       subTitleBody: ['', Validators.required],
       addSubtitlePrincipal: [''],
+      imagenTextoPrincipal: [],
+
       parrafoBody: ['', Validators.required],
       addImagenParrafo: [''],
       imagenParrafo: [''],
       addSubtitleParrafo : [''],
-      hasImagenParrafo: [false]
+
+      titleListaParrafo: [],
+
+      addParrafo: [],
+      hasImagenParrafo: [false],
+
+
+
+    // hasSubMenu:boolean;
+    // titleBody: string;
+    // subTitleBody: string;
+    // // body: []; en mongo FIXME:
+    // body: string;
+    // bodyLista?: string;
+    // // bodyLista: [] en momgo
+    // hasBodyLista?: boolean;
+    // imagenLista?: string;
+    // image?: string;
+    // imageSubtitle?: string;
+    // isEdit: boolean;
 
 
 

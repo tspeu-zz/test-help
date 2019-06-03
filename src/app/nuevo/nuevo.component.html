@@ -52,21 +52,22 @@
                         <div *ngIf="submitted && f.numberSubMenu.errors" class="invalid-feedback">
                             <div *ngIf="f.numberSubMenu.errors.required">Debe indicar un número sub menu</div>
                         </div>
-                        <button class="btn btn-success my-2">
-                             <i class="fa fa-plus"></i>  subtítulo
-                        </button>
 
+                      </div>
                     </div>
-                </div>
-                <div class="col-md-10">
-                    <div class="form-group">
+                    <div class="col-md-10">
+                      <div class="form-group">
                         <label class="font-weight-bold">SubTítulo menu lateral</label>
                         <input type="text" formControlName="subtitleMenu" class="form-control"
                         [ngClass]="{ 'is-invalid': submitted && f.subtitleMenu.errors }" />
                         <div *ngIf="submitted && f.subtitleMenu.errors" class="invalid-feedback">
-                            <div *ngIf="f.subtitleMenu.errors.required">Indique un título del sub menu</div>
+                          <div *ngIf="f.subtitleMenu.errors.required">Indique un título del sub menu</div>
                         </div>
-                    </div>
+                      </div>
+
+                    <button class="btn btn-success my-2" formControlName="addSubtitleMenu">
+                        <i class="fa fa-plus"></i>  subtítulo
+                    </button>
                 </div>   <!--  <div class="card-body">-->
               </div>  <!--  <div class="card">-->
             </div>
@@ -98,11 +99,12 @@
                 (change)="onAddImagenSubtitulo($event)"
                 [checked]='togleeImagenSubtituloPrin'>  añadir imagen Título<!-- [value]='role.id'-->
             </div>
-            <!-- FIXME: IMAGEN TEXTO PRINCIPAL -->
-            <div class="form-group" *ngIf="togleeImagenSubtituloPrin">
-                <label>Imagen Título</label>
-                <input type="file" class="form-control-file" id="imagenTextoPrincipal">
-            </div>
+              <!-- FIXME: IMAGEN TEXTO PRINCIPAL -->
+              <div class="form-group" *ngIf="togleeImagenSubtituloPrin">
+                  <label>Imagen Título</label>
+                  <input type="file" class="form-control-file" id="imagenTextoPrincipal"
+                  formControlName="imagenTextoPrincipal">
+              </div>
           </div>   <!--  <div class="card-body">-->
           </div>  <!--  <div class="card">-->
 
@@ -136,7 +138,8 @@
                 <!--FIXME: IMAGEN PARRAFO -->
                 <div class="form-group" *ngIf="togleeImagenParrafo">
                   <label>Imagen Parrafo</label>
-                  <input type="file" class="form-control-file" id="imagenParrafo">
+                  <input type="file" class="form-control-file" id="imagenParrafo"
+                  formControlName="imagenParrafo">
                 </div>
 
                 <!-- TODO: LISTA PARRAFO -->
@@ -145,10 +148,10 @@
                     <h5 class="card-title text-center text-primary">Lista Párrafo Texto Principal</h5>
                     <div class="form-group">
                       <label>Título lista párrafo</label>
-                      <input type="text" formControlName="subTitleBody" class="form-control"
-                      [ngClass]="{ 'is-invalid': submitted && f.subTitleBody.errors }" />
-                      <div *ngIf="submitted && f.subTitleBody.errors" class="invalid-feedback">
-                        <div *ngIf="f.subTitleBody.errors.required">Indique un Sub título</div>
+                      <input type="text" formControlName="titleListaParrafo" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.titleListaParrafo.errors }" />
+                      <div *ngIf="submitted && f.titleListaParrafo.errors" class="invalid-feedback">
+                        <div *ngIf="f.titleListaParrafo.errors.required">Indique un Sub título</div>
                       </div>
                     </div>
 
@@ -160,7 +163,7 @@
                       </div>
 
                       <div class="form-group mx-3">
-                        <input type="checkbox" formControlName="addSubtitleParrafo"
+                        <input type="checkbox" formControlName="addListaParrafo"
                         (change)="onAddSubListaParrafo($event)"
                         [checked]='addTieneSubListaTituloParrafo'>  Tiene  título  sub Lista párrafo<!-- [value]='role.id'-->
                       </div>
@@ -172,7 +175,7 @@
                     <input type="file" class="form-control-file" id="imagenListaParrafo">
                   </div>
 
-                    <button class="btn btn-info my-2">
+                    <button class="btn btn-info my-2" formControlName="addParrafo">
                         <i class="fa fa-plus"></i>  título lista párrafo
                     </button>
 
