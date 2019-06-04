@@ -64,13 +64,13 @@
                           <div *ngIf="f.subtitleMenu.errors.required">Indique un título del sub menu</div>
                         </div>
                       </div>
+                    </div>   <!--  <div class="card-body">-->
 <!-- formControlName="addSubtitleMenu -->
                     <button class="btn btn-success my-2" >
                         <i class="fa fa-plus"></i>  subtítulo
                     </button>
-                </div>   <!--  <div class="card-body">-->
-              </div>  <!--  <div class="card">-->
-            </div>
+              </div>  <!--  <div class="card-body">-->
+            </div>  <!--  <div class="card">-->
           </div>
 
           <!-- TODO: BODY TITULO TEXTO PRINCIPAL  -->
@@ -157,7 +157,7 @@
 
                     <div class="row">
                       <div class="form-group mx-3">
-                        <input type="checkbox" formControlName="addSubtitle"
+                        <input type="checkbox" formControlName="addImagenListaParrafo"
                         (change)="onAddImagenSubtituloParrafo($event)"
                         [checked]='togleeImagenListaParrafo'>  añadir imagen lista párrafo<!-- [value]='role.id'-->
                       </div>
@@ -173,6 +173,7 @@
                   <div class="form-group" *ngIf="togleeImagenListaParrafo">
                     <label>Imagen Lista Párrafo</label>
                     <input type="file" class="form-control-file" id="imagenListaParrafo">
+                    <!-- TODO: add imagen  -->
                   </div>
 
                     <button class="btn btn-info my-2" formControlName="addParrafo">
@@ -186,16 +187,16 @@
                       <h5 class="card-title text-center text-primary">Sub Lista Párrafo Texto Principal</h5>
                         <div class="form-group">
                             <label>Título sub lista párrafo</label>
-                            <input type="text" formControlName="subTitleBody" class="form-control"
-                            [ngClass]="{ 'is-invalid': submitted && f.subTitleBody.errors }" />
-                            <div *ngIf="submitted && f.subTitleBody.errors" class="invalid-feedback">
-                              <div *ngIf="f.subTitleBody.errors.required">Indique un Sub título lista párrafo</div>
+                            <input type="text" formControlName="titleSubListaParrafo" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.titleSubListaParrafo.errors }" />
+                            <div *ngIf="submitted && f.titleSubListaParrafo.errors" class="invalid-feedback">
+                              <div *ngIf="f.titleSubListaParrafo.errors.required">Indique un Sub título lista párrafo</div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group ">
-                              <input type="checkbox" formControlName="addSubtitle"
+                              <input type="checkbox" formControlName="addSubListaParrafo"
                               (change)="onAddImagenSubListaParrafo($event)"
                               [checked]='togleeImagenSubListaParrafo'>  añadir imagen Sub lista párrafo <!-- [value]='role.id'-->
                             </div>

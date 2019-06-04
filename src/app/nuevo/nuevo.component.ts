@@ -62,12 +62,21 @@ export class NuevoComponent implements OnInit {
       parrafoBody: ['', Validators.required],
       addImagenParrafo: [''],
       imagenParrafo: [''],
+
       addSubtitleParrafo : [''],
 
+
       titleListaParrafo: [],
+      titleSubListaParrafo: [],
+
 
       addParrafo: [],
       hasImagenParrafo: [false],
+
+      addListaParrafo: [],
+      addImagenListaParrafo: [],
+      addSubListaParrafo: [],
+
 
     }
     // ,{validator: MustMatch('password', 'confirmPassword')}
@@ -75,41 +84,49 @@ export class NuevoComponent implements OnInit {
   }
 
   tranformToDb( data) {
-    let formatData = new ModeloMenu;
-  
+    let formatData: ModeloMenu = new ModeloMenu();
+
     if ( data !== null) {
 
-      formatData.numberMenu= data.numMenuLat;
+      formatData.numberMenu = data.numMenuLat;
       formatData.titleMenu = data.titleMenu;
       formatData.subtitleMenu = data.subtitleMenu;
       formatData.numberSubMenu = data.numberSubMenu;
-
+      formatData.hasBodyLista = false;
       formatData.hasSubMenu = data.addSubtitleMenu;
 
       formatData.titleBody = data.titleBody;
       formatData.subTitleBody = data.subTitleBody;
-      formatData.hasBodyLista = data.false
+      formatData.hasBodyLista = data.false;
       formatData.imagenLista = data.addSubtitleMenu;
       formatData.image = data.imagenTextoPrincipal;
 
-      // formatData.body = [ ];
-      formatData.body[0].parr = data.parrafoBody;
-      formatData.body[0].imagen = data.imagenParrafo;
-      formatData.body[0].hasImagen = false;
-      formatData.body[0].listaParr[0].titulo = data.titleListaParrafo;
-      formatData.body[0].listaParr[0].imagen = data.imagenListaParrafo;
-      formatData.body[0].listaParr[0].hasImagen = false;
-      formatData.body[0].listaParr[0].SubListaParr[0].titulo = ""
-      formatData.body[0].listaParr[0].SubListaParr[0].imagen = "";
-      formatData.body[0].listaParr[0].SubListaParr[0].hasImagen= false;
-      formatData.body.push();
+      // TODO: hacer el loop por si hay mas body
+      const bodyTemp: any = [{}];
+      bodyTemp.body = [{}];
+      bodyTemp.body[0].parr = data.parrafoBody;
+      bodyTemp.body[0].imagen = data.imagenParrafo || '';
+      bodyTemp.body[0].hasImagen = false;
+      bodyTemp.body[0].listaParr = [{}];
+      bodyTemp.body[0].listaParr[0].titulo = data.titleListaParrafo;
+      bodyTemp.body[0].listaParr[0].imagen = data.imagenListaParrafo;
+      bodyTemp.body[0].listaParr[0].hasImagen = false;
+      bodyTemp.body[0].listaParr[0].SubListaParr = [{}];
+      bodyTemp.body[0].listaParr[0].SubListaParr[0].titulo = '';
+      bodyTemp.body[0].listaParr[0].SubListaParr[0].imagen = '';
+      bodyTemp.body[0].listaParr[0].SubListaParr[0].hasImagen = false;
 
-      formatData.bodyLista[0] = [];
-      formatData.imageSubtitle.imagen = "";
-      formatData.imageSubtitle.hasImagen = false;
-      formatData.isEdit=false
+      formatData.body = bodyTemp.body.map( b => b);
+      console.log('****---formatData.body***-', formatData.body);
+      // formatData.body.push(bodyTemp);
+
+      formatData.bodyLista = null;
+      formatData.imageSubtitle  = null;
+      // formatData.imageSubtitle.imagen = '';
+      // formatData.imageSubtitle.hasImagen = false;
+      formatData.isEdit = false;
     }
-    console.log('DATA FORMATEADA_> ',formatData );
+    console.log('DATA FORMATEADA_> ', formatData );
     return formatData;
   }
 

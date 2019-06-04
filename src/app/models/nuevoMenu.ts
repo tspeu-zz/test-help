@@ -1,16 +1,16 @@
 export class ModeloMenu {
 
-    body: [ 
-        { 
+    body: [
+      {
         parr: string;
         imagen: string;
         hasImagen: false;
-        listaParr :[
+        listaParr: [
             {
                 titulo: string;
                 imagen: string;
                 hasImagen: false;
-                    SubListaParr:[{
+                    SubListaParr: [{
                         titulo:  string;
                         imagen:  string;
                         hasImagen: false;
@@ -20,17 +20,17 @@ export class ModeloMenu {
     bodyLista: [{}];
     numberMenu: string;
     titleMenu: string;
-    subtitleMenu:string;
-    numberSubMenu:string;
+    subtitleMenu: string;
+    numberSubMenu: string;
     hasSubMenu: false;
-    titleBody:string;
-    subTitleBody:string;
-    hasBodyLista: false
-    imagenLista:string;
-    image:string;
+    titleBody: string;
+    subTitleBody: string;
+    hasBodyLista:  false;
+    imagenLista: string;
+    image: string;
     imageSubtitle: {
-        hasImagen:false,
-        imagen : string
+        hasImagen: false,
+        imagen: string
     };
     isEdit: false;
 
