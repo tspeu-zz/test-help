@@ -11,30 +11,30 @@ export class ModeloData {
     tituloPrincipal: string;
     subtituloPrincipal: string;
     hasImagenPrincipal: boolean;
-    nombreImagenPrincipal: string;
-    imagenPrincipal: any;
+    imagenPrincipalURL: string;
+    imagenPrincipal: {data: any, contentType: string};
     // TEXTO PRINCIPAL PÁRRAFO
     parrafo: [
       {
         tituloParr: string,
         hasImagenParr: false,
-        nombreImagenParr: string,
-        imagenParr: any,
+        imagenParrURL: string,
+        imagenParr: {data: any, contentType: string},
         hasListaParr: boolean,
         // TEXTO PRINCIPAL LISTA PÁRRAFO
         listaParr: [
           {
             titulolistaParr: string;
             hasImagenlistaParr: false;
-            nombreImagenlistaParr: string;
-            imagenlistaParr: any;
+            imagenlistaParrURL: string;
+            imagenlistaParr: {data: any, contentType: string};
             hasSubListaParr: boolean,
             // TEXTO PRINCIPAL SUBLISTA PÁRRAFO
             SubListaParr: [{
               tituloSubListaParr:  string;
               hasImagenSubListaParr: false;
-              nombreImagenSubListaParr:  string;
-              imagenSubListaParr:  any;
+              imagenSubListaParrURL:  string;
+              imagenSubListaParr:  {data: any, contentType: string};
             }];
           }]
       }];
