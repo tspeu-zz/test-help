@@ -2,7 +2,9 @@
 
   <h2 id="{{body.numberMenu}}">  {{body.titleBody}}</h2>
   <h3 id="{{body.numberSubMenu}}"> {{body.subTitleBody}}</h3>
-  <!-- <p>{{body.body}}</p> -->
+
+  <!-- <img *ngIf="b.addImagenSubtitleBody" class="text-center" src="assets/{{b.imagenTextoPrincipal}}"> -->
+
   <div *ngFor=" let b of body.body">
 
     <p> {{b.parr}}</p>
@@ -11,13 +13,12 @@
 
     <ul *ngFor=" let lista of b.listaParr" class="listas-principal ">
       <li> {{lista.titulo}}</li>
-
         <ul *ngFor="let sub of lista.SubListaParr" style="list-style-type: circle;">
           <li> {{sub.titulo}}</li>
         </ul>
-
     </ul>
   </div>
+
 </div>
 
 

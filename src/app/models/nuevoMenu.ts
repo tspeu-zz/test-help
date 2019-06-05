@@ -1,4 +1,5 @@
 export class ModeloMenu {
+  [x: string]: any;
 
     body: [
       {
@@ -23,7 +24,11 @@ export class ModeloMenu {
     subtitleMenu: string;
     numberSubMenu: string;
     hasSubMenu: false;
+
     titleBody: string;
+    addImagenSubtitleBody: false;
+
+    imagenTextoPrincipal: string;
     subTitleBody: string;
     hasBodyLista:  false;
     imagenLista: string;

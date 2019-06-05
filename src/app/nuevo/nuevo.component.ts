@@ -56,8 +56,16 @@ export class NuevoComponent implements OnInit {
 
       titleBody: ['', Validators.required],
       subTitleBody: ['', Validators.required],
-      addSubtitlePrincipal: [''],
-      imagenTextoPrincipal: [],
+
+      // addImagenSubtitleBody: [],
+      // imagenTextoPrincipal: [],
+      imageSubtitle : this.formBuilder.group({
+        hasImage: false ,
+        imagen : []
+      }),
+
+
+
 
       parrafoBody: ['', Validators.required],
       addImagenParrafo: [''],
@@ -84,7 +92,7 @@ export class NuevoComponent implements OnInit {
   }
 
   tranformToDb( data) {
-    let formatData: ModeloMenu = new ModeloMenu();
+    const formatData: ModeloMenu = new ModeloMenu();
 
     if ( data !== null) {
 
@@ -97,16 +105,26 @@ export class NuevoComponent implements OnInit {
 
       formatData.titleBody = data.titleBody;
       formatData.subTitleBody = data.subTitleBody;
-      formatData.hasBodyLista = data.false;
+//
+      // formatData.addImagenSubtitleBody = data.addImagenSubtitleBody;
+      // formatData.imagenTextoPrincipal = data.imagenTextoPrincipal;
+      formatData.imageSubtitle  = {
+        hasImagen : data.imageSubtitle.hasImage,
+        imagen : data.imageSubtitle.image,
+      };
+  // formatData.imageSubtitle.imagen = '';
+  // formatData.imageSubtitle.hasImagen = false;
+//
+
+      formatData.hasBodyLista = data.addSubtitleParrafo;
       formatData.imagenLista = data.addSubtitleMenu;
-      formatData.image = data.imagenTextoPrincipal;
 
       // TODO: hacer el loop por si hay mas body
       const bodyTemp: any = [{}];
       bodyTemp.body = [{}];
       bodyTemp.body[0].parr = data.parrafoBody;
       bodyTemp.body[0].imagen = data.imagenParrafo || '';
-      bodyTemp.body[0].hasImagen = false;
+      bodyTemp.body[0].hasImagen = data.addImagenParrafo;
       bodyTemp.body[0].listaParr = [{}];
       bodyTemp.body[0].listaParr[0].titulo = data.titleListaParrafo;
       bodyTemp.body[0].listaParr[0].imagen = data.imagenListaParrafo;
@@ -121,9 +139,6 @@ export class NuevoComponent implements OnInit {
       // formatData.body.push(bodyTemp);
 
       formatData.bodyLista = null;
-      formatData.imageSubtitle  = null;
-      // formatData.imageSubtitle.imagen = '';
-      // formatData.imageSubtitle.hasImagen = false;
       formatData.isEdit = false;
     }
     console.log('DATA FORMATEADA_> ', formatData );
@@ -142,7 +157,7 @@ export class NuevoComponent implements OnInit {
   onSubmit() {
 
       this.submitted = true;
-      let  resp : ModeloMenu;
+      let  resp: ModeloMenu;
       resp =  this.tranformToDb(this.registerForm.value);
 
       // stop here if form is invalid
