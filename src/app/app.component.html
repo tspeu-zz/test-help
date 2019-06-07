@@ -30,17 +30,31 @@
   <!-- </div> -->
 </nav>
 
-<div>
+<div class="wrap-whole">
 
-  <div class="sidenav ">
-    <ul>
-      <li *ngFor="let item of sideMenu">
+  <div class="vertical-nav-bar">
+
+    <ul class="menu-container">
+        <li class="main-nav-link">
+            <a href="#">
+                <!-- <i class="fa fa-home main-nav-icon"></i> -->
+                <p>1. Home</p>
+            </a>
+          </li>
+      </ul>
+
+    <ul class="menu-container">
+      <li class="main-nav-link" *ngFor="let item of sideMenu">
         <app-sidemenu  [item]="item"></app-sidemenu>
       <li>
     </ul>
+
+
+
+
   </div>
 
-  <div class="container2 ">
+  <div class="container__main ">
     <h1 class="text-center font-weight-bold"> Ayuda a la prescripción de REC-SCS</h1>
     <app-nuevo *ngIf="togleeNuevo"></app-nuevo>
     <div [hidden]="togleeNuevo">

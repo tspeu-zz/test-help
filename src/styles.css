@@ -11,12 +11,27 @@
 /* Globals */
 
 /* latin-ext */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrap-whole{
+  display:flex;
+  flex-flow:row nowrap;
+  justify-content:space-between;
+  height:100vh;
+}
+
 @font-face {
   font-family: 'Source Code Pro';
   font-style: normal;
   font-weight: 400;
   src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(assets/fonts/SourceCodePro-Regular.ttf);
 }
+/* NAVBAR OK */
 .navbar{
   background: #428bca;
 }
@@ -25,8 +40,88 @@
     font-size: 28px;
     text-decoration: none;
 }
+/*  **************  */
+
+/* FIXME:NEW SIDEMENU STYLE */
+.main-header-content {
+  flex: 1 1 auto;
+}
+
+.vertical-nav-bar {
+  display: flex;
+  flex: 0 0 100px;
+  flex-flow: column nowrap;
+  text-align: center;
+  z-index: 30;
+  background: #061e2a;
+  background: linear-gradient(to right,#fefefe, 99%, #8c8c8d);
+  padding: 1rem 0 0 0;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.vertical-nav-bar a {
+  color: rgb(7, 132, 241);
+  text-decoration: none;
+}
+
+.vertical-nav-bar ul {
+  list-style-type: none;
+}
+
+.menu-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+.main-nav-link {
+  transition: opacity .2s, visibility .2s;
+  flex: 1 1 auto;
+  align-self: center;
+  display: flex;
+  position: relative;
+}
+.main-nav-link a {
+  font-family: "Whitney Cond A", "Whitney Cond B", "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  font-weight: 500;
+  font-size: 0.66rem;
+  letter-spacing: 0.04rem;
+  color: #03A9F4;
+  padding: 0.75rem 0.5rem;
+  text-transform: uppercase;
+
+}
+
+.main-nav-icon {
+  font-size: 50px;
+  padding: 5px;
+}
 
 
+/*FIXME: CONTAINER NEW  */
+.container__main {
+  flex: 1 1 600px;
+  overflow-y: auto;
+}
+
+.container__header {
+  text-align: center;
+  font-size: 30px;
+}
+
+.container__content {
+  margin: 30px 20px 10px 20px;
+}
+
+p {
+  font-size: 24px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* ***************************************** */
+/* OLD STYLE */
+/* ***************************************** */
 .sidenav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
   width: 260px; /* Set the width of the sidebar */
